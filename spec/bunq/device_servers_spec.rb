@@ -10,14 +10,14 @@ describe Bunq::DeviceServers do
   describe '#create' do
     let(:api_key) { Bunq.client.configuration.api_key }
     let(:description) { 'rspec server' }
-    let(:permitted_ips) {  ['1.2.3.4', '*'] }
+    let(:permitted_ips) { ['1.2.3.4', '*'] }
 
     it 'fails when no description is passed' do
       expect { device_servers.create(nil) }.to raise_error ArgumentError
     end
 
     context 'with valid input' do
-      let(:response) {
+      let(:response) do
         {
           "Response": [{
             "Id": {
@@ -25,13 +25,13 @@ describe Bunq::DeviceServers do
             }
           }]
         }
-      }
+      end
       it 'returns the id of the created device server' do
-        stub_request(:post, bunq_uri).
-          with(
+        stub_request(:post, bunq_uri)
+          .with(
             body: {description: description, secret: api_key, permitted_ips: permitted_ips}
-          ).
-          to_return({
+          )
+          .to_return({
             body: JSON.dump(response)
           })
 
@@ -46,7 +46,7 @@ describe Bunq::DeviceServers do
   end
 
   describe '#index' do
-    let(:response) {
+    let(:response) do
       {
         "Response": [
           {
@@ -61,11 +61,11 @@ describe Bunq::DeviceServers do
           }
         ]
       }
-    }
+    end
 
     it 'lists the device servers' do
-      stub_request(:get, bunq_uri).
-        to_return({
+      stub_request(:get, bunq_uri)
+        .to_return({
           body: JSON.dump(response)
         })
 

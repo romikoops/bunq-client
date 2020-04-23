@@ -39,4 +39,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock", "~> 3.2.1"
   spec.add_development_dependency "rspec-json_expectations", "~> 2.1"
   spec.add_development_dependency "codecov", "~> 0.1.10"
+  spec.add_development_dependency "rubocop", "~> 0.82.0"
 end

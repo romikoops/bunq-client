@@ -16,7 +16,7 @@ describe Bunq::UserCompany, :requires_session do
 
       result = user_company.show
       expect(session_stub).to have_been_requested
-      expect(result).to include_json ([{"UserCompany": {"id": 42}}])
+      expect(result).to include_json [{"UserCompany": {"id": 42}}]
     end
   end
 
@@ -38,7 +38,7 @@ describe Bunq::UserCompany, :requires_session do
         })
 
       result = user_company.update({notification_filters: notification_filters})
-      expect(result).to include_json ([{"Id": {"id": 42}}])
+      expect(result).to include_json [{"Id": {"id": 42}}]
     end
   end
 end

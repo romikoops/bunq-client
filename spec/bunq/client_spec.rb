@@ -11,7 +11,7 @@ describe Bunq::Client do
 
     it 'does not alter the global configuration' do
       expect { client.with_local_config { |config| config.timeout = 30 } }
-        .to_not change { client.configuration.timeout }
+        .to_not(change { client.configuration.timeout })
     end
 
     it 'returns what the block returns' do

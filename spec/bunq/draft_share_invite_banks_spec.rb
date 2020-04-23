@@ -17,8 +17,8 @@ describe Bunq::DraftShareInviteBanks, :requires_session do
               "view_balance": true,
               "view_old_events": true,
               "view_new_events": true
-            },
-          },
+            }
+          }
         }
       }
     end

@@ -36,11 +36,11 @@ describe Bunq::Payments, :requires_session do
 
         expect(subject.to_a).to include_json([
           {
-            "Payment": { "id": 42 },
+            "Payment": { "id": 42 }
           },
           {
-            "Payment": { "id": 84 },
-          },
+            "Payment": { "id": 84 }
+          }
         ])
       end
     end
@@ -67,14 +67,14 @@ describe Bunq::Payments, :requires_session do
 
         expect(subject.to_a).to include_json([
           {
-            "Payment": { "id": 170 },
+            "Payment": { "id": 170 }
           },
           {
-            "Payment": { "id": 120 },
+            "Payment": { "id": 120 }
           },
           {
-            "Payment": { "id": 42 },
-          },
+            "Payment": { "id": 42 }
+          }
         ])
       end
     end

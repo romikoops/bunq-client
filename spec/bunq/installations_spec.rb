@@ -39,8 +39,8 @@ describe Bunq::Installations do
           body: response
         )
 
-        result = installations.index
-        expect(result).to include_json(JSON.parse(response)['Response'])
+      result = installations.index
+      expect(result).to include_json(JSON.parse(response)['Response'])
     end
   end
 end

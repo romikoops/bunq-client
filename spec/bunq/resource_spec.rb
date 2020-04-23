@@ -4,7 +4,7 @@ require_relative '../../lib/bunq/errors'
 
 describe Bunq::Resource do
   let(:client) { Bunq.client }
-  let(:url) { "#{client.configuration.base_url}" }
+  let(:url) { client.configuration.base_url.to_s }
 
   let(:resource) { Bunq::Resource.new(client, '/resource') }
 

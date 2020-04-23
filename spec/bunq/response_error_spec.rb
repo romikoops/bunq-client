@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Bunq::ResponseError do
   context 'with a JSON body' do
-    let(:error) {
+    let(:error) do
       json = '{"Error": "foo"}'
       Bunq::ResponseError.new(code: 400, headers: { 'content-type' => ['application/json'] }, body: json)
-    }
+    end
 
     describe '#parsed_body' do
       it 'returns the parsed JSON' do
@@ -29,9 +29,9 @@ describe Bunq::ResponseError do
   end
 
   context 'without a JSON body' do
-    let(:error) {
+    let(:error) do
       Bunq::ResponseError.new(code: 400, headers: nil, body: "")
-    }
+    end
 
     describe '#parsed_body' do
       it 'returns nil' do
